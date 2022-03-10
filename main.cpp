@@ -9,13 +9,12 @@
 /// @date 10_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "animal.h"
+#include "Animal.h"
 
 int main() {
-/*    Animal myFirstAnimal = Animal( "Felis catus" );
+    Animal myFirstAnimal = Animal( "Felis catus" );
     myFirstAnimal.setGender( MALE );
     myFirstAnimal.setWeight( 19 ); // @todo Refactor to include Unit of Measure
     myFirstAnimal.printInfo();
     return 0;
-*/
  }
