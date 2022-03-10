@@ -24,11 +24,11 @@ class Animal {
 public:
     Animal(const std::string &newSpecies);
 
-    Animal(const std::string &newSpecies, Gender newGender);
+    Animal(const std::string &newSpecies, const Gender newGender);
 
-    Animal(const std::string &newSpecies, float newWeight);
+    Animal(const std::string &newSpecies, const float newWeight);
 
-    Animal(const std::string &newSpecies, Gender newGender, float newWeight);
+    Animal(const std::string &newSpecies, const Gender newGender, const float newWeight);
 
     Gender getGender() const;
 

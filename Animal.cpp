@@ -21,18 +21,18 @@ Animal::Animal(const string &newSpecies)
     setSpecies(newSpecies);
 }
 
-Animal::Animal(const string &newSpecies, Gender newGender) : gender(newGender)
+Animal::Animal(const string &newSpecies, const Gender newGender) : gender(newGender)
 {
     setSpecies(newSpecies);
 }
 
-Animal::Animal(const string &newSpecies, float newWeight)
+Animal::Animal(const string &newSpecies, const float newWeight)
 {
     setSpecies(newSpecies);
     setWeight(newWeight);
 }
 
-Animal::Animal(const string &newSpecies, Gender newGender, float newWeight) : gender(newGender)
+Animal::Animal(const string &newSpecies, const Gender newGender, const float newWeight) : gender(newGender)
 {
     setSpecies(newSpecies);
     setWeight(newWeight);
@@ -71,6 +71,9 @@ const string &Animal::getSpecies() const {
 }
 
 const void Animal::printInfo() {
+    if(!isValid())
+        throw logic_error("Not a valid animal");
+
     cout << "Animal Fields" << endl;
     cout << "\tKingdom [" << getKingdom() << "]" << endl;
     cout << "\tSpecies [" << getSpecies() << "]" << endl;
@@ -79,7 +82,7 @@ const void Animal::printInfo() {
 }
 
 bool Animal::isValid() {
-    if(!validateWeight(weight))
+    if(!validateWeight(Animal::getWeight()) || !validateSpecies(Animal::getSpecies()))
         return false;
 
     return true;
